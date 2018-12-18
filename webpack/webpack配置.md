@@ -74,7 +74,7 @@ npm  install css-loader   -D
 
  css通过javascript动态创建style标签来写入，这个意味着样式代码都编译在main.js里（太占体积，还不能做缓存)
 
-*  extract-text-webpack-plugin 把css提取出来，生成一个main.css文件，之后在index.html里通过link加载  
+*  extract-text-webpack-plugin 把css提取出来，生成一个main.css文件，之后在index.html里通过link加载  --不兼容webpack4  
 *npm install  extract-text-webpack-plugin -D *
 ```
 //导入插件
