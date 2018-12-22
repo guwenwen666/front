@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>promise</title>
+    <script src="utils/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#promise1").click(function () {
+                let p = new Promise((resolve, reject) => {
+                    $.ajax({
+                        url: 'utils/1.txt',
+                        success(res) {
+                            resolve(res);
+                        },
+                        eror(err) {
+                            reject(res);
+                        }
+                    })
+                });
+                p.then(//返回两个函数
+                    res => {
+                        console.log(res);
+                    },
+                    err => { }
+                )
+            });
+            $("#promise2").click(function () {
+                let p = new Promise((resolve, reject) => {
+                    $.ajax({
+                        url: 'utils/1.txt',
+                        dataType: 'json',
+                        success(json) {
+                            resolve(json);
+                        },
+                        error(err) {
+                            reject(err);
+                        }
+                    })
+                });
+                let p1 = new Promise((resolve, reject) => {
+                    $.ajax({
+                        url: 'utils/2.txt',
+                        dataType: 'json',
+                        success(json) {
+                            resolve(json);
+                        },
+                        error(err) {
+                            reject(err);
+                        }
+                    })
+                });
+                let p2 = new Promise((resolve, reject) => {
+                    $.ajax({
+                        url: 'utils/3.txt',
+                        dataType: 'json',
+                        success(json) {
+                            resolve(json);
+                        },
+                        error(err) {
+                            reject(err);
+                        }
+                    })
+                });
+                Promise.all([p, p1, p2]).then(arr => {
+                    console.log(arr, "arr");
+                }, err => {
+                    console.log(err, 'err');
+                })
+            });
+            $("#promise3").click(function () {
+                $.ajax({
+                    url: 'utils/1.txt',
+                    dataType: 'json',
+                }).then(json => {
+                    alert("成功")
+                }, err => {
+                    alert('失败');
+                })
+            }),
+                $("#promise4").click(function () {
+                    Promise.all([$.ajax({
+                        url: 'utils/1.txt',
+                        dataType: 'json',
+                    }), $.ajax({
+                        url: 'utils/2.txt',
+                        dataType: 'json',
+                    }), $.ajax({
+                        url: 'utils/3.txt',
+                        dataType: 'json',
+                    })]).then(json => {
+                        console.log(json);
+                        var [a1, a2, a3] = json;
+                        console.log(a1, a2, a3)
+                    }, err => { })
+                })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="promise1">promise1</button>
+    <button id="promise2">promise2</button>
+    <button id="promise3">promise3</button>
+    <button id="promise4">promise4</button>
+</body>
+
+</html>

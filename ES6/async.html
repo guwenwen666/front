@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="utils/jquery.js"></script>
+    <title>async</title>
+    <script>
+    async function show(){
+        alert('aaa');
+        await new Promise((resolve,reject)=>{
+            setTimeout(function(){
+                resolve();
+            },2000);
+        });
+        alert('bbb');
+    }
+    (async () => {
+        let data1 = await $.ajax({url:"utils/1.txt",dataType:'json'});
+        let data2 = await $.ajax({url:"utils/2.txt",dataType:'json'});
+        let data3 = await $.ajax({url:"utils/3.txt",dataType:'json'});
+        console.log(data1,data2,data3);
+    })();
+    // show();
+    // show1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
