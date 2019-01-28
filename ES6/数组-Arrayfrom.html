@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrayfrom</title>
+    <style media="screen">
+        div {
+            width: 100px;
+            height: 100px;
+            background: palegoldenrod;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        let arrDiv = document.getElementsByClassName('div');
+        console.log(arrDiv);
+        console.log([1, 2, 3]);
+        let arrDiv2 = Array.from(arrDiv);
+        arrDiv2.forEach(div => {
+            div.style.background = 'pink';
+        })
+        console.log(arrDiv2);
+        let arrayLike = {
+            0: 'tom',
+            1: '65',
+            2: '男',
+            3: ['jane', 'john', 'Mary'],
+            'length': 4
+        }
+        let arr = Array.from(arrayLike)
+        console.log(arr) // ['tom','65','男',['jane','john','Mary']]
+    </script>
+</head>
+
+<body>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象--ES6</title>
+    <script>
+    //创建对象
+    class Person{
+        //构造器
+        constructor(name,age){
+            console.log(this);
+            this.name = name;
+            this.age = age;
+        }
+        showName(){
+            alert(this.name);
+        }
+    }
+    // let p = new Person('gww',18);
+    // p.showName();
+    // console.log(p);
+
+    //继承
+    class Wocker extends Person{
+        constructor(name,age,job){
+            super(name,age);
+            this.job = job
+        }
+        showJob(){
+            alert(this.job);
+            // alert("--",this.name);
+        }
+    }
+    let w = new Wocker('cwx','20',"程序猿");
+    w.showJob();
+    w.showName();
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

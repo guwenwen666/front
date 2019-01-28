@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>generator</title>
+    <script src="utils/jquery.js"></script>
+    <script>
+        $(function () {
+            initEvent();
+        });
+        function *show(){
+            alert('aaa');
+            yield;
+            alert('bbb');
+        }
+        function *show2(){
+            alert('aaa');
+            let a =  yield;
+            alert('bbb'+a);
+        }
+        function *show3(){
+            alert('aaa');
+            yield 1;
+            alert('bbb');
+        }
+        function initEvent() {
+            $("#generator1").click(function () {
+                let gen = show();
+                gen.next();
+                gen.next();
+            });
+            $("#generator2").click(function () {
+                //传参
+                let gen = show2();
+                gen.next();
+                gen.next(1);
+            })
+            $("#generator3").click(function () {
+                //返回值
+                let gen = show3();
+                let res1 = gen.next();
+                let res2 = gen.next();
+                console.log('res1',res1);//{value: 1, done: false}
+                console.log('res2',res2);//{value: undefined, done: true} 使用return返回值
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <button id="generator1">generator1</button>
+    <button id="generator2">generator2</button>
+    <button id="generator3">generator3</button>
+
+</body>
+
+</html>

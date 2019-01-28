@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>剩余参数</title>
+    <script>
+    window.onload=function(){
+        show(1,2,3)
+        show(1,[2,3,4,5])
+        let arr = [1,2,3];
+        console.log("展开的数组为",...arr);
+        console.log("join",arr.join(','));
+        let arr2 = [2,34,...arr];
+        console.log("arr2",arr2)
+    }
+    function show(a,...args){
+        console.log(a,...args);
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

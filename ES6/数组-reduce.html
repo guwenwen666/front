@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>reduce</title>
+    <script>
+    window.onload=function(){
+        let arr = [1,4,5,543,23];
+        let arr1 = arr.reduce((tmp,item,index)=>{
+            console.log(tmp,item,index);
+            return tmp+item;
+        })
+        console.log("arr1",arr1);
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
