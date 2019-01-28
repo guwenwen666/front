@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="utils/jquery.js"></script>
+    <title>循环</title>
+    <script>
+        const obj = {
+            name: 'gwww',
+            age: '18'
+        }
+        const arr = [
+            {
+                name: 'gwww',
+                age: '18'
+            },
+            {
+                name: '111',
+                age: '18'
+            }
+        ]
+        window.onload = function () {
+            $('#btn1').click(function () {
+                for (let key in obj) {
+                    console.log(key);
+                }
+                delete obj['name'];
+                console.log(obj);
+            })
+            $('#btn2').click(function () {
+                for (let value of arr) {
+                    console.log(value);
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn1">for...in</button>
+    <button id="btn2">for...of</button>
+
+</body>
+
+</html>

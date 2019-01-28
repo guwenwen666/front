@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="utils/jquery.js"></script>
+    <title>数据类型</title>
+</head>
+<script>
+    window.onload = function(){
+        btn1Click();
+        btn2Click();
+        btn3Click();
+        btn4Click();
+        btn5Click();
+    }
+    function btn1Click(){
+        $('#btn1').on('click',function(){
+            alert("I\'m \"gww\" ");
+        })
+    }
+    function btn2Click(){
+        $('#btn2').on('click',function(){
+           let s1 = '1认为fc';
+           s1.toUpperCase();
+           console.log('s1',s1.indexOf('f'));
+           console.log('s1',s1.substring(3));
+           console.log('s1',s1);
+        })
+    }
+    function btn3Click(){
+        $('#btn3').on('click',function(){
+            let a1 = [1,2,3,5];
+            console.log('concat',a1.concat([1221,22]));
+            console.log('join',a1.join('='));
+            console.log('slice',a1.slice(0,2));
+            console.log('toString',a1.toString());
+            console.log('a1',a1);
+        })
+    }
+    function btn4Click(){
+        $('#btn4').on('click',function(){
+            let a1 = [1,2,3,5];
+            console.log('pop',a1.pop());
+            console.log('a1',a1);
+            let a2 = [1,2,4,6,89,9];
+            console.log('push',a2.push(2222));
+            console.log('a2',a2);
+            console.log('reverse',a2.reverse());
+            console.log('a2',a2);
+            a2.sort(function(a,b){
+                return a-b
+            });
+            console.log('a2',a2);
+            a2.splice(0,1,'gww');
+            console.log('a2',a2);
+        })
+    }
+    function btn5Click(){
+        $('#btn5').on('click',function(){
+            let p = {
+                name:'gww',
+                age:'18',
+                city:'nantong'
+            }
+            alert(p.hasOwnProperty('name'));
+            alert(p.hasOwnProperty('dd'));
+        })
+    }
+
+</script>
+<body>
+    <button id="btn1" >转义</button>
+    <button id="btn2">不改变原字符串</button>
+    <button id="btn3">不改变原数组</button>
+    <button id="btn4">改变原数组</button>
+    <button id="btn5">hasOwnProperty</button>
+    
+</body>
+</html>

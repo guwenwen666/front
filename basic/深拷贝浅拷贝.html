@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="utils/jquery.js"></script>
+    <title>深拷贝、浅拷贝</title>
+    <script>
+        const A = {
+            name: 'gww',
+            age: 20
+        }
+        window.onload = function () {
+            $('#test1').click(function () {
+                let B = A;
+                A.name = 'cwx';
+                console.log('A--被复制对象', A);
+                console.log('B--修改对象', B)
+            })
+            $('#test2').click(function () {
+                console.log('是否是数组', Array.isArray(A));
+                console.log('数据类型', typeof A);
+                let B = deepClone(A);
+                console.log('B', B);
+                A.name = 'xxxx';
+                console.log('A', A);
+                console.log('B', B);
+                let m = [1, { name: 'gww' }, 3, 4, 5];
+                let n = deepClone(m);
+                n[1]['name'] = 999;
+                console.log('m', m);
+                console.log('n', n);
+            })
+            $('#test3').click(function () {
+                let a = [[1, 2], 23, 4, 56];
+                let b = a.slice();
+                a[0][0] = 2;
+                console.log('a', a);
+                console.log('b', b);
+            })
+            $('#test4').click(function () {
+                let a = [[1, 2], 23, 4, 56];
+                let b = a.concat([7, 8]);
+                a[0][0] = 2;
+                console.log('a', a);
+                console.log('b', b);
+            })
+            $('#test5').click(function () {
+                let a = [[1, 2], 23, 4, 56];
+                let b = deepClone_1(a);
+                a[0][0] = 'qw';
+                console.log('a',a);
+                console.log('b',b);
+            })
+            $('#test6').click(function () {
+                let a = [[1, 2], 23, 4, 56];
+                let b = $.extend(true, [], a );
+                a[0][0] = 'qw';
+                console.log('a',a);
+                console.log('b',b);
+            })
+        }
+        //深拷贝
+        function deepClone(obj) {
+            //isArray() 方法用于判断一个对象是否为数组。
+            //如果对象是数组返回 true，否则返回 false。
+            let objClone = Array.isArray(obj) ? [] : {};
+            if (obj && typeof obj === "object") {
+                for (key in obj) {
+                    if (obj.hasOwnProperty(key)) {
+                        //判断ojb子元素是否为对象，如果是，递归复制
+                        if (obj[key] && typeof obj[key] === "object") {
+                            objClone[key] = deepClone(obj[key]);
+                        } else {
+                            //如果不是，简单复制
+                            objClone[key] = obj[key];
+                        }
+                    }
+                }
+            }
+            return objClone;
+        }
+        function deepClone_1(obj) {
+           return JSON.parse( JSON.stringify(obj));
+        }
+
+    </script>
+</head>
+
+<body>
+    <button id="test1">测试浅拷贝</button>
+    <button id="test2">测试深拷贝1</button>
+    <button id="test3">slice</button>
+    <button id="test4">concat</button>
+    <button id="test5">JSON对象的parse和stringify </button>
+    <button id="test6">$.extend </button>
+    
+</body>
+
+</html>
