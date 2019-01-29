@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包/回调函数/匿名函数</title>
+    <script src="utils/jquery.js"></script>
+    <script>
+
+        $(function () {
+            $('#test1').click(function () {
+                let result =  test1();
+                result();
+            })
+            $('#test2').click(function () {
+                let result =  test2();
+                result();
+                add();
+                result();
+                add();
+                result();
+            })
+            $('#test3').click(function () {
+                (function(x,y,z){
+                    alert(x+y+z)
+                })(1,2,3)
+            })
+            $('#test4').click(function () {
+           
+            })
+            function test1() {
+                let n = '局部变量';
+                return function(){
+                    alert(n);
+                }
+            }
+            function test2(){
+                let m = 1;
+                add = function(){
+                    m = m+1
+                }
+                return function(){
+                    alert(m);
+                }
+            }
+        })
+
+
+    </script>
+</head>
+
+<body>
+    <button id="test1">闭包的用途1--从外部读取局部变量</button>
+    <button id="test2">闭包的用途2--变量一直存在于内存之中</button>
+    <button id="test3">执行匿名函数</button>
+    <button id="test4">匿名函数实现闭包</button>
+
+</body>
+
+</html>

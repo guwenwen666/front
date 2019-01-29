@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>释放js对象</title>
+    <script src="utils/jquery.js"></script>
+    <script>
+        $(function () {
+            var vv = '222';
+            let mm = '1111';
+            let nn = {
+                name: 'g',
+                age: '123'
+            }
+            test();
+            function test() {
+                let a = 1;
+                let b = 2;
+                alert(a + b);
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="main-div">
+
+    </div>
+</body>
+
+</html>
+<style>
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-div {
+        width: 100%;
+        height: 100%;
+        background: palegoldenrod
+    }
+</style>

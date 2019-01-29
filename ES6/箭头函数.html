@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>箭头函数</title>
     <script>
-    let show = (a,b)=>{
-       return a+b;
-    }
-    alert(show(1,2));
-    //数组排序
-    console.log(Array.prototype);
-    let arr =[1,2,3,765,4534,321245,4421];
-    arr.sort((n1,n2)=>
-         n1-n2
-    );
-    console.log(arr);
+        let show = (a, b) => {
+            return a + b;
+        }
+        alert(show(1, 2));
+        //数组排序
+        console.log(Array.prototype);
+        let arr = [1, 2, 3, 765, 4534, 321245, 4421];
+        arr.sort((n1, n2) =>
+            n1 - n2
+        );
+        console.log(arr);
+        var a = '222'
+        console.log('-----------------------------------------------');
+        let obj = {
+            a: '11',
+            fun: () => {
+                console.log('fun=====', this)
+                return this.a;
+            }
+        }
+        alert(obj.fun());
+        console.log('-----------------------------------------------');
+        function test() {
+            var a = 666;
+            let obj1 = {
+                a: '11',
+                fun: () => {
+                    console.log('fun2=====', this)
+                    return this.a;
+                }
+            }
+            return obj1.fun();
+        }
+        alert(test());
+        console.log('-----------------------------------------------');
+        function test2(){
+            this.m = '99';
+            let b = ()=>{
+                console.log('this===========',this)
+                alert(this.m);
+            }
+            b()
+        }
+        new test2();
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
