@@ -10,12 +10,13 @@
     <script>
 
         $(function () {
+            console.log('this', this);
             $('#test1').click(function () {
-                let result =  test1();
+                let result = test1();
                 result();
             })
             $('#test2').click(function () {
-                let result =  test2();
+                let result = test2();
                 result();
                 add();
                 result();
@@ -23,26 +24,78 @@
                 result();
             })
             $('#test3').click(function () {
-                (function(x,y,z){
-                    alert(x+y+z)
-                })(1,2,3)
+                (function (x, y, z) {
+                    alert(x + y + z)
+                })(1, 2, 3)
             })
             $('#test4').click(function () {
-           
+                let result = (function () {
+                    let a = 'gww';
+                    return function () {
+                        alert(a);
+                    }
+                })();
+                result();
+
+            })
+            $('#test5').click(function () {
+                var friends = ["Mike", "Stacy", "Andy", "Rick"];
+                friends.forEach(function (eachName, index) {
+                    console.log(index + 1 + ". " + eachName); // 1. Mike, 2. Stacy, 3. Andy, 4. Rick
+                });
+            })
+            $('#test6').click(function () {
+                doCallBcak('gww666', callBack1);
+            })
+            $('#test7').click(function () {
+                console.log('this', this)
+                doCallBack1('111', '222', obj.getName, obj);
+                alert(obj.name);
+                //this指向了window
             })
             function test1() {
                 let n = '局部变量';
-                return function(){
+                return function () {
                     alert(n);
                 }
             }
-            function test2(){
+            function test2() {
                 let m = 1;
-                add = function(){
-                    m = m+1
+                add = function () {
+                    m = m + 1
                 }
-                return function(){
+                return function () {
                     alert(m);
+                }
+            }
+            function callBack1(data) {
+                alert('data ====' + data);
+            }
+            function doCallBack1(name1, name2, callBack, callBackObj) {
+                //callBack(name1,name2);
+                // callBack.call(callBackObj,name1,name2)
+                callBack.apply(callBackObj, [name1, name2])
+            }
+            function doCallBcak(options, callBack) {
+                let data = options;
+                //要特别注意相等运算符==。JavaScript在设计时，有两种比较运算符：
+
+                // 第一种是==比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果；
+
+                // 第二种是===比较，它不会自动转换数据类型，如果数据类型不一致，返回false，如果一致，再比较。
+
+                // 由于JavaScript这个设计缺陷，不要使用==比较，始终坚持使用===比较
+                if (typeof callBack === 'function') {
+                    callBack(data);
+                } else {
+                    alert('不是函数');
+                }
+            }
+            let obj = {
+                name: 'no Set',
+                getName: function (name1, name2) {
+                    console.log('this', this)
+                    this.name = name1 + '-' + name2;
                 }
             }
         })
@@ -56,6 +109,9 @@
     <button id="test2">闭包的用途2--变量一直存在于内存之中</button>
     <button id="test3">执行匿名函数</button>
     <button id="test4">匿名函数实现闭包</button>
+    <button id="test5">回调函数--匿名函数</button>
+    <button id="test6">回调函数--具名函数</button>
+    <button id="test7">回调函数--this</button>
 
 </body>
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>setTimeout and setInterval</title>
+    <script>
+        //setTimeout
+        var Timer = setTimeout(function () {
+            let timer = setTimeout(function () {
+                console.log('timer', timer);
+            }, 1000)
+            console.log('Timer', Timer);
+        }, 1000);
+        console.log(0);
+        //停止
+        //clearTimeout(Timer);
+
+
+        var a = 'a';
+        let obj = {
+            a: 'obj.a',
+            func: function () {
+                console.log('this', this);
+                alert(this.a);
+            }
+        }
+        //obj.func();
+        setTimeout(obj.func, 0);//a
+
+
+
+        var b = 0;
+        var obj1 = {
+            b: 2,
+            foo: function () {
+                console.log('b', this.b);
+            }
+        }
+        setTimeout(obj1.foo.bind(obj1), 100);//2
+
+        window.onload = function () {
+            document.getElementById('time').value = 1;
+            let btn = document.getElementById('btn');
+            let time = setInterval(function () {
+                document.getElementById('time').value = parseInt(document.getElementById('time').value) + 1
+            }, 1000);
+            btn.onclick = function () {
+                clearInterval(time);
+                btn.innerHTML = '继续'
+            }
+            myDiv.onclick = function () {
+                var timer = setInterval(function () {
+                    if (parseInt(myDiv.style.left) > 200) {
+                        clearInterval(timer);
+                        return false;
+                    }
+                    myDiv.style.left = parseInt(myDiv.style.left) + 5 + 'px';
+
+                }, 16);
+            }
+            myDiv1.onclick = function () {
+                setTimeout(function fn() {
+                    if (parseInt(myDiv1.style.left) <= 200) {
+                        setTimeout(fn, 16);
+                    } else {
+                        return false;
+                    }
+                    myDiv1.style.left = parseInt(myDiv1.style.left) + 5 + 'px';
+                }, 16);
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <input id="time" value="时间">
+    <button id="btn">暂停</button>
+    <div id="myDiv" style="height: 100px;width: 100px;background-color: pink;position:absolute;left:0;"></div>
+    <div id="myDiv1" style="height: 100px;width: 100px;background-color: red;position:absolute;left:0;top: 200px"></div>
+
+</body>
+
+</html>
