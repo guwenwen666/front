@@ -16,7 +16,6 @@
         }, 1000);
         console.log(0);
         //停止
-        //clearTimeout(Timer);
 
 
         var a = 'a';
@@ -24,11 +23,11 @@
             a: 'obj.a',
             func: function () {
                 console.log('this', this);
-                alert(this.a);
+                console.log('a=',this.a);
             }
         }
-        //obj.func();
-        setTimeout(obj.func, 0);//a
+        obj.func();//obj.a   obj调用
+        setTimeout(obj.func, 0);//a windows调用
 
 
 
@@ -40,6 +39,15 @@
             }
         }
         setTimeout(obj1.foo.bind(obj1), 100);//2
+
+
+        //for循环 setTimeout
+        for(let i = 0;i<=5;i++){
+            setTimeout(function(){
+                console.log(i);
+            },1000*i)
+        }
+
 
         window.onload = function () {
             document.getElementById('time').value = 1;
