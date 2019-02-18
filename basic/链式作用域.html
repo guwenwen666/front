@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>链式作用域</title>
+    <script>
+    var n = 0;
+    var m = 1;
+    function test1(){
+        alert('n='+n);
+    }
+    function test2(){
+        alert('m='+m);
+        var m = 0;
+    }
+    test1();
+    test2();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
