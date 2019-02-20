@@ -19,6 +19,27 @@
     let person = new Person();
     person.name = '666';
     console.log('name',person.name);
+    console.log("对象的原型",person.__proto__);
+    console.log("构造函数原型和对象原型比较",Person.prototype === person.__proto__)
+    console.log("原型指向构造函数",Person.prototype.constructor === Person);
+    //获得对象原型
+    console.log("对象原型另一种方法",Object.getPrototypeOf(person));
+    console.log("对象原型另一种方法",Object.getPrototypeOf(s));
+    //实例和原型
+    person.age = 'new age';
+    console.log('person---',person)
+    console.log("person.age",person.age)
+    delete person.age;
+    console.log('person---',person)
+    console.log("person.age",person.age);
+    let obj = new Object();
+    Object.prototype.age = 'obj age';
+   // obj.age = 'obj age';
+    console.log('obj.age',obj.age);
+    console.log('person---',person)
+    console.log("person.age",person.age);
+    console.log(person.__proto__.__proto__ === Object.prototype);
+    
     </script>
 </head>
 <body>
