@@ -1,0 +1,207 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #F0C27B
+}
+*,:after,:before{box-sizing:border-box}
+.pull-left{float:left}
+.pull-right{float:right}
+/* .clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block} */
+.clearfix:after{
+    display: block;
+    content:'';
+    clear: both;
+    height:0;
+}
+a{
+    text-decoration:none
+}
+.main-div{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding:15px;
+    background:-webkit-linear-gradient(90deg, #F0C27B 10%, #4B1248 90%);
+    background:-webkit-linear-gradient(left, #F0C27B 10%, #4B1248 90%);
+    background:linear-gradient(90deg, #F0C27B 10%, #4B1248 90%);
+}
+.container{
+    width:100%;
+	margin:auto;
+	max-width:280px;
+	overflow:hidden;
+	border-radius:3px;
+	background:#B7AFA3;
+	box-shadow:0 17px 50px 0 rgba(0,0,0,.19),0 12px 15px 0 rgba(0,0,0,.24);
+}
+.container>a:not(:last-child){
+	border-bottom:1px solid rgba(0,0,0,.2);
+}
+.container >a{
+    color:#374046;
+	padding:15px;
+    display:block;
+    
+}
+.container > a:hover,
+.container > a.active{
+    background:#E8D0A9;
+    color: #B77F24
+}
+.container .sub-nav{
+	color:#374046;
+	overflow:hidden;
+	background:#ecf0f1;
+}
+.container .html{
+	padding:15px;
+}
+.container .about-me{
+	text-align:center;
+	position:relative;
+}
+.container .about-me .photo{
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    margin: auto;
+    border:4px solid #fff;
+    background: url(https://s.gravatar.com/avatar/24a65a47147cddf5b270bc9f609ffa2a?s=90) no-repeat center;
+    box-shadow:0 6px 20px 0 rgba(0,0,0,.19),0 8px 17px 0 rgba(0,0,0,.2);
+    position: relative;
+}
+.container .about-me .photo .photo-overlay{
+	top:0;
+	left:0;
+	right:0;
+    bottom:0;
+    opacity:0;
+    position:absolute;
+    background:rgba(0,0,0,.4);
+    border-radius: 50%;
+    visibility:hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .about-me .photo:hover .photo-overlay{
+    opacity: 1;
+    visibility: visible;
+}
+.container .about-me .photo .photo-overlay .plus{
+	width:30px;
+	height:30px;
+    color:#1a1a1b;
+	cursor:pointer;
+	font-size:24px;
+	font-weight:100;
+	line-height:30px;
+	border-radius:50%;
+    text-align:center;
+    transition:all .1s ease-in-out 0s;
+	background:#e8d0a9;
+}
+.container .about-me .photo:hover .photo-overlay .plus{
+	transform:scale(1) rotate(180deg);
+}
+.container .about-me h4{
+	margin-bottom:0;
+}
+.container .about-me p{
+	font-size:14px;
+	font-weight:300;
+	margin-bottom:0;
+}
+.container .chat .user:not(:last-child){
+    margin-bottom: 10px
+}
+.container .chat .user .text-msg{
+	max-width:70%;
+	font-size:13px;
+	padding:4px 8px;
+	background:#fff;
+	border-radius:4px;
+	display:inline-block;
+	border:1px solid #cdd6d8;
+}
+.container .chat .user-khadkamhn .text-msg{
+	background:#dce2e4;
+}
+.container .chat .user .photo{
+	width:40px;
+	height:40px;
+	font-size:24px;
+	line-height:36px;
+	text-align:center;
+	position:relative;
+	border-radius:3px;
+	display:inline-block;
+    border:1px solid rgba(0,0,0,.2);
+    color:#fff;
+	margin-right:5px;
+	background:#f15e95;
+}
+.container .chat .user .photo:before,
+.container .chat .user .photo:after{
+	content:'';
+	opacity:0;
+	visibility:hidden;
+	position:absolute;
+	/* -webkit-transition:opacity .4s ease-in-out 0s;
+	transition:opacity .4s ease-in-out 0s; */
+}
+.container .chat .user .photo:before{
+	background:#333333;
+	border-radius:4px;
+    word-break:break-all;
+    content:attr(data-username);
+    font-size: 14px;
+    left:50%;
+	width:60px;
+	bottom:50px;
+	padding:4px;
+	font-size:12px;
+	line-height:14px;
+	margin-left:-30px;
+	text-align:center;
+}
+.container .chat .user .photo:after{
+	left:50%;
+	bottom:35px;
+	margin-left:-8px;
+	border:8px solid transparent;
+	border-top:8px solid #333333;
+}
+.container .chat .user .photo:hover:before,
+.container .chat .user .photo:hover:after{
+	opacity:1;
+	visibility:visible;
+}
+.container>.sub-nav>a>.alert-numb,
+.container>a>.alert-numb{
+	color:#eee;
+	right:10px;
+	height:22px;
+	min-width:40px;
+	font-size:12px;
+	font-weight:600;
+	line-height:22px;
+	border-radius:15px;
+	text-align:center;
+	background:#665e51;
+}
+.container .sub-nav a{
+	display:block;
+	color:inherit;
+	font-weight:300;
+	padding:10px 15px;
+}
+.container .sub-nav a:not(:last-child){
+	border-bottom:1px solid rgba(0,0,0,.1);
+}
+.container .sub-nav a:hover{
+	background:#c2ced1;
+	box-shadow:5px 0 0 #8ca3a8 inset;
+}
