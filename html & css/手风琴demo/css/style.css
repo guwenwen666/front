@@ -6,9 +6,7 @@ body{
 *,:after,:before{box-sizing:border-box}
 .pull-left{float:left}
 .pull-right{float:right}
-/* .clearfix:after,.clearfix:before{content:'';display:table}
-.clearfix:after{clear:both;display:block} */
-.clearfix:after{
+.clearfix::after{
     display: block;
     content:'';
     clear: both;
@@ -204,4 +202,99 @@ a{
 .container .sub-nav a:hover{
 	background:#c2ced1;
 	box-shadow:5px 0 0 #8ca3a8 inset;
+}
+.container .invite{
+	text-align:center;
+}
+.container .invite .dribbble{
+	display:block;
+	color:#c33269;
+	margin:10px 0;
+	font-size:24px;
+	font-family:Pacifico;
+}
+.container .invite .btn{
+	color:#eee;
+	font-weight:500;
+	background:#ccc;
+	padding:10px 15px;
+	border-radius:2px;
+	background:#f15e95;
+	display:inline-block;
+	text-transform:uppercase;
+}
+
+
+
+
+.container .about-me .social-link{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	opacity:0;
+	padding-top:48px;
+	visibility:hidden;
+	position:absolute;
+	background:rgba(0,0,0,.3);
+	-webkit-transition:opacity .5s ease-in-out 0s;
+	transition:opacity .5s ease-in-out 0s;
+}
+.container .about-me .social-link.active{
+	opacity:1;
+	visibility:visible;
+}
+.container .about-me .social-link .link{
+	width:30px;
+	padding:0;
+	color:#eee;
+	height:30px;
+	margin:0 4px;
+	line-height:28px;
+	border-radius:50%;
+	display:inline-block;
+	-webkit-transform:translateY(-80px) scale(0);
+	        transform:translateY(-80px) scale(0);
+	border:1px solid rgba(0,0,0,.2);
+}
+.container .about-me .social-link .link-twitter{
+	background:#55acce;
+}
+.container .about-me .social-link .link-codepen{
+	background:#1a1a1b;
+}
+.container .about-me .social-link .link-facebook{
+	background:#3b5998;
+}
+.container .about-me .social-link .link-dribbble{
+	background:#ea4c89;
+}
+.container .about-me .social-link .link:hover{
+	box-shadow:none;
+}
+.container .about-me .social-link.active .link{
+	-webkit-transform:translateY(0) scale(1);
+	        transform:translateY(0) scale(1);
+}
+.container .about-me .social-link.active .link:nth-child(1){
+	-webkit-transition-duration:.1s;
+	        transition-duration:.1s;
+}
+.container .about-me .social-link.active .link:nth-child(2){
+	-webkit-transition-duration:.2s;
+	        transition-duration:.2s;
+}
+.container .about-me .social-link.active .link:nth-child(3){
+	-webkit-transition-duration:.3s;
+	        transition-duration:.3s;
+}
+.container .about-me .social-link.active .link:nth-child(4){
+	-webkit-transition-duration:.4s;
+	        transition-duration:.4s;
+}
+.container .about-me.blur p,
+.container .about-me.blur h4,
+.container .about-me.blur .photo{
+	-webkit-filter:blur(2px);
+	filter:blur(2px);
 }

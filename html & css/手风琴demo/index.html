@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <script src='js/jquery.min.js'></script>
+    <script src="js/index.js"></script>
     <title>手风琴</title>
 </head>
 
@@ -13,7 +15,7 @@
     <div class="main-div">
         <div class="container">
             <a href="#" class="active">Profile</a>
-            <div class="sub-nav">
+            <div class="sub-nav active">
                 <div class="html about-me">
                     <div class="photo">
                         <div class="photo-overlay">
@@ -23,6 +25,12 @@
                     <h4>@khadkamhn</h4>
                     <p>Hi, It's me Mohan. I'm a web and graphics designer. Designing is my passion and I have been working on
                         various designing projects.</p>
+                    <div class="social-link">
+                        <a class="link link-twitter" href="#" target="_blank"> </a>
+                        <a class="link link-codepen" href="#" target="_blank"> </a>
+                        <a class="link link-facebook" href="#" target="_blank"> </a>
+                        <a class="link link-dribbble" href="#" target="_blank"></a>
+                    </div>
                 </div>
             </div>
             <a href="#"> Chat</a>
@@ -44,16 +52,30 @@
                     </div>
                 </div>
             </div>
-            <a href="#"> Messages<span class="pull-right alert-numb">21</span></a>
+            <a href="#"> Messages
+                <span class="pull-right alert-numb">21</span>
+            </a>
             <div class="sub-nav">
-                    <a href="#">Inbox <span class="pull-right alert-numb">11</span></a>
-                    <a href="#">Important <span class="pull-right alert-numb">10</span></a>
-                    <a href="#">Sent</a>
-                    <a href="#">Draft</a>
-                    <a href="#">Trash</a>
-                    <a href="#">All messages</a>
+                <a href="#">Inbox
+                    <span class="pull-right alert-numb">11</span>
+                </a>
+                <a href="#">Important
+                    <span class="pull-right alert-numb">10</span>
+                </a>
+                <a href="#">Sent</a>
+                <a href="#">Draft</a>
+                <a href="#">Trash</a>
+                <a href="#">All messages</a>
             </div>
             <a href="#"> Dribbble Invite</a>
+            <div class="sub-nav">
+                <div class="html invite">
+                    <p>I would like to join
+                        <span class="dribbble">dribbble</span> community</p>
+                    <p>Could you please invite me?</p>
+                    <a class="btn" href="#" target="_blank">Draft Me</a>
+                </div>
+            </div>
         </div>
     </div>
 </body>
