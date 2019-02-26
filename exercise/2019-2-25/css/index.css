@@ -160,7 +160,35 @@ html,body{
     opacity: 0;
 }
 .main .chat .head-img:hover:before,
-.main .chat .head-img:after{
+.main .chat .head-img:hover:after{
     visibility: visible;
     opacity: 1;
+}
+.main .messages{
+    padding: 0;
+    text-align: left
+}
+.main .messages>a{
+    padding: 10px 15px;
+    display: block;
+    text-decoration:none;
+    color:#374046;
+    display: bock;
+}
+.main .messages>:not(:last-child){
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.main .messages>a span{
+    /* display: inline-block; */
+    height: 30px;
+    width: 40px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #665e51;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 300;
+    float: right;
 }
