@@ -7,8 +7,8 @@ body{
 *,:after,:before{box-sizing:border-box}
 .pull-left{float:left}
 .pull-right{float:right}
-.clearfix:after,.clearfix:before{content:'';display:table}
-.clearfix:after{clear:both;display:block}
+/* .clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block} */
 
 .accordion-wrap{
 	top:0;
