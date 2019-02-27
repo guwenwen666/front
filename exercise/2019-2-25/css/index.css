@@ -50,6 +50,10 @@ html,body{
     text-align: center;
     padding: 15px;
     background: #ecf0f1;
+    display: none;
+}
+.main .detail.active{
+    display: block;
 }
 .main  h4{
     color: #374046;
@@ -58,6 +62,9 @@ html,body{
     font-size: 14px;
     font-weight: 300;
     margin-top: 10px;
+}
+.main .profile{
+    position: relative;
 }
 .main .profile .photo{
     padding: 10px;
@@ -103,6 +110,40 @@ html,body{
 .main .profile .head:hover .plus{
     transform:scale(1) rotate(180deg);
     transition:all .1s ease-in-out 0s;
+}
+
+.main .social-link{
+    position: absolute;
+    background:rgba(0,0,0,.3);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 50px;
+    visibility: hidden;
+}
+.main .social-link .link{
+	width:30px;
+	padding:0;
+	color:#eee;
+	height:30px;
+	margin:0 4px;
+	line-height:28px;
+	border-radius:50%;
+	display:inline-block;
+	border:1px solid rgba(0,0,0,.2);
+}
+.social-link .link-twitter{
+	background:#55acce;
+}
+ .social-link .link-codepen{
+	background:#1a1a1b;
+}
+.social-link .link-facebook{
+	background:#3b5998;
+}
+ .social-link .link-dribbble{
+	background:#ea4c89;
 }
 .main .chat{
     text-align: left
@@ -170,25 +211,49 @@ html,body{
 }
 .main .messages>a{
     padding: 10px 15px;
-    display: block;
+    /* display: block; */
     text-decoration:none;
     color:#374046;
-    display: bock;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .main .messages>:not(:last-child){
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
-.main .messages>a span{
+.main .messages>a span,.main .num{
     /* display: inline-block; */
     height: 30px;
     width: 40px;
     border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: #665e51;
     color: #ffffff;
     font-size: 12px;
     font-weight: 300;
+    line-height:30px;
+    text-align: center;
     float: right;
+}
+.main .messages>a:hover{
+    background:#c2ced1;
+	box-shadow:5px 0 0  #8ca3a8 inset;
+}
+.main .invite .dribbble{
+    color: #c33269;
+    font-size: 18px;
+    display: block
+}
+.main .invite .btn{
+    width: 150px;
+    height: 40px;
+    background: #c33269;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    display: inline-block;
+    margin: auto
+    
+
 }
