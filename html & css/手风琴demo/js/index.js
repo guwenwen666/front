@@ -37,6 +37,7 @@ Profile = {
 			console.log('this',this);
 			console.log('$this',$this);
 			$target =  $this.next();
+			console.log($target);
 			$this.siblings('a').removeAttr('class');
 			$this.addClass('active');
 			if(!$target.hasClass('active')){
