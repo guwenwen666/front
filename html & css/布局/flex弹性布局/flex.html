@@ -1,23 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>flex</title>
 </head>
+
 <body>
-    
+    <div class="box">
+        <div class="test1">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </div>
+        <div class="test2">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </div>
+        <div class="test3">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </div>
+        <div class="test4">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </div>
+        <div class="test5">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test6">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test7">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test8">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test9">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test10">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test11">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test12">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test13">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test14">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test15">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test16">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test17">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test18">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test19">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test20">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test21">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test22">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="test23">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+
+
+    </div>
+
 </body>
+
 </html>
 <style>
-    *{
+    * {
         padding: 0;
         margin: 0
     }
-    html,body{
+
+    html,
+    body {
         width: 100%;
         height: 100%;
     }
 
+    .box {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background: palegoldenrod;
+    }
+
+    .box>div {
+        width: 200px;
+        display: flex;
+    }
+
+    .test1 {
+        background: palegreen;
+        flex-direction: row
+    }
+
+    .test2 {
+        background: indianred;
+        flex-direction: row-reverse
+    }
+
+    .test3 {
+        background: paleturquoise;
+        flex-direction: column;
+    }
+
+    .test4 {
+        background: yellowgreen;
+        flex-direction: column-reverse
+    }
+
+    .test5 {
+        background: yellow;
+        flex-wrap: nowrap;
+        height: 120px;
+    }
+
+    .test6 {
+        background: honeydew;
+        flex-wrap: wrap;
+        height: 120px;
+    }
+
+    .test7 {
+        background: navy;
+        flex-wrap: wrap-reverse;
+        height: 120px;
+    }
+
+    .test5>span,
+    .test6>span,
+    .test7>span {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        background: wheat;
+        margin-left: 10px;
+        margin-bottom: 10px
+    }
+
+    .test8 {
+        background: aqua;
+        width: 400px;
+        height: 120px;
+        justify-content: flex-start;
+    }
+
+    .test9 {
+        background: bisque;
+        width: 400px;
+        height: 120px;
+        justify-content: flex-end;
+    }
+
+    .test10 {
+        background: chocolate;
+        width: 400px;
+        height: 120px;
+        justify-content: center;
+    }
+
+    .test11 {
+        background: darkcyan;
+        width: 400px;
+        height: 120px;
+        justify-content: space-between;
+    }
+
+    .test12 {
+        background: forestgreen;
+        width: 400px;
+        height: 120px;
+        justify-content: space-around;
+    }
+
+    .test13 {
+        background: fuchsia;
+        width: 100px;
+        height: 400px;
+        align-items: flex-start
+    }
+
+    .test14 {
+        background: gold;
+        width: 100px;
+        height: 400px;
+        align-items: flex-end
+    }
+
+    .test15 {
+        background: honeydew;
+        width: 100px;
+        height: 400px;
+        align-items: center
+    }
+
+    .test16 {
+        background: indianred;
+        width: 100px;
+        height: 400px;
+        align-items: baseline
+    }
+
+    .test16>span:nth-child(1) {
+        height: 50px;
+        width: 50px;
+        background: lightgreen;
+        line-height: 50px;
+    }
+
+    .test16>span:nth-child(2) {
+        height: 60px;
+        width: 50px;
+        background: olive;
+        line-height: 60px
+    }
+
+    .test17 {
+        background: khaki;
+        width: 100px;
+        align-items: stretch
+    }
+
+    .test18 {
+        background: magenta;
+        width: 200px;
+        height: 200px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start
+    }
+
+    .test19 {
+        background: navy;
+        width: 200px;
+        height: 200px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end
+    }
+
+    .test20 {
+        background: blue;
+        width: 200px;
+        height: 200px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center
+    }
+
+    .test21 {
+        background: violet;
+        width: 200px;
+        height: 200px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: space-between
+    }
+
+    .test22 {
+        background: cadetblue;
+        width: 200px;
+        height: 200px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: space-around
+    }
+
+    .test22>span,
+    .test23>span,
+    .test21>span,
+    .test20>span,
+    .test19>span,
+    .test18>span {
+        display: block;
+        height: 20px;
+        width: 20px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        background: #789097
+    }
+
+    .test23 {
+        background: lightcoral;
+        width: 200px;
+        height: 200px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: stretch
+    }
 </style>

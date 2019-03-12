@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>order</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="order">
+            <span>2</span>
+            <span>1</span>
+            <span>22</span>
+            <span>3</span>
+            <span>2</span>
+            <span>1</span>
+            <span>22</span>
+            <span>3</span>
+            <span>2</span>
+            <span>1</span>
+            <span>22</span>
+            <span>3</span>
+        </div>
+        <div class="order1">
+            <span>5</span>
+            <span>1</span>
+            <span>22</span>
+            <span>3</span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<style>
+    * {
+        padding: 0;
+        margin: 0
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    .main {
+        display: flex;
+        height: 100%;
+        width: 100%
+    }
+
+    .order,
+    .order1 {
+        height: 200px;
+        width: 200px;
+        background: palegoldenrod;
+        margin: 10px;
+        display: flex;
+    }
+
+    .order>span,
+    .order1>span {
+        display: block;
+        height: 100px;
+        width: 100px;
+        margin: 10px;
+        background: aqua
+    }
+
+    .order {
+        order: 2;
+        flex-grow: 2;
+        flex-shrink: 20;
+        display: flex;
+    }
+    .order>span:nth-child(1){
+        flex-shrink: 5;
+    }
+    .order>span:nth-child(2){
+        flex-shrink: 5;
+    }
+
+    .order1 {
+        order: 10;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+</style>
