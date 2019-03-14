@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax请求</title>
+    <script src="jquery.js"></script>
+    <script>
+
+        $(function () {
+            $("#button").click(function () {
+                doAjax();
+            })
+        });
+        function doAjax() {
+            $.ajax({
+                url: "1.txt",
+                type: "get",
+                dataType: "text",
+                data: {
+                    a: 2,
+                    b: 1
+                },
+                success(response) {
+                    alert(response)
+                },
+                error() {
+
+                }
+            })
+        }
+
+    </script>
+</head>
+
+<body>
+    <button id="button">ajax请求</button>
+</body>
+
+</html>

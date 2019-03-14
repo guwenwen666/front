@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax原生</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            var xhr = new XMLHttpRequest();
+            //连接
+            xhr.open("GET",'1.txt',true);
+            //发送
+            xhr.send();
+            //接收
+            xhr.onreadystatechange = function(){
+                // alert(xhr.readyState);
+             
+                // alert(xhr.status);
+                if(xhr.readyState ==4){
+                    if((xhr.status>=200 && xhr.status<300) || xhr.status == 304){
+                        console.log(xhr.responseText);
+                    }else{
+                        alert("错误");
+                    }
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>
