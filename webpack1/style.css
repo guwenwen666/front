@@ -1,0 +1,12 @@
+body,html{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%
+}
+#app{
+    height: 100%;
+    width:100%;
+    /* background: pink; */
+    background-image: url("./logo3.jpg");
+}
