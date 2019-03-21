@@ -64,5 +64,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
  babel-loader 给webpack用的  
  babel-core  babel核心库  
  babel-preset-env  环境预设
+ ```
+    module:{
+        rules:[
+             {
+                 test: /\.js$/, 
+                 use: 'babel-loader', 
+                 exclude: /node_modules/
+                }
+            
+        ]
+    }
+ ```
  
 

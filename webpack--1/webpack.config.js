@@ -13,27 +13,24 @@ module.exports={
         filename:'bundle.js'
         // filename:'[name].bundle.js'
     },
-    // devServer:{
-    //     //contentBase:pathlib.resolve('static'),
-    //     port:8090
-    // },
-    // plugins:[
-    //     new HtmlWebpackPlugin({
-    //         template: './static/index.html',
-    //         filename: './test.html',
-    //       })
-    // ],
+    devServer:{
+        contentBase:pathlib.resolve('static'),
+        port:8090
+    },
+    plugins:[
+        new HtmlWebpackPlugin({
+            template: './static/index.html',
+            filename: './test.html',
+          })
+    ],
     module:{
         rules:[
-            {
-                test:/\.js$/,
-                use:{
-                    loader:'babel-loader',
-                    options:{
-                        presets:['env']
-                    }
+             {
+                 test: /\.js$/, 
+                 use: 'babel-loader', 
+                 exclude: /node_modules/
                 }
-            }
+            
         ]
     }
 
