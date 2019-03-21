@@ -1,2 +1,3 @@
 import mode1 from './mode1.js'
-console.log(mode1+'2');
+console.log('2.js===');
+console.log(mode1);

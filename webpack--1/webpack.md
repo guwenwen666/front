@@ -36,4 +36,33 @@ module.exports={
 }
 ```
 ### devServer
-* 安装 cnpm i webpack-dev-server -D
+* 安装 cnpm install --save webpack-dev-server
+```
+    devServer:{
+        contentBase:pathlib.resolve('static'),
+        port:8090
+    },
+```
+
+`注意：你启动webpack-dev-server后，你在目标文件夹中是看不到编译后的文件的,实时编译后的文件都保存到了内存当中`  
+
+### 插件 ---HtmlWebpackPlugin  
+* 安装 cnpm install --save  html-webpack-plugin
+```
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+    plugins:[
+        new HtmlWebpackPlugin({
+            template: './static/index.html',
+            filename: './test.html',
+          })
+    ],
+```
+
+### Loader --babel-loader
+* 安装 cnpm install --save babel-loader babel-core babel-preset-env  
+ babel-loader 给webpack用的  
+ babel-core  babel核心库  
+ babel-preset-env  环境预设
+ 
+

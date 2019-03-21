@@ -81,32 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/2.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/es6.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/2.js":
-/*!******************!*\
-  !*** ./src/2.js ***!
-  \******************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/es6.js":
+/*!********************!*\
+  !*** ./src/es6.js ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mode1_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mode1.js */ \"./src/mode1.js\");\n\r\nconsole.log(_mode1_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]+'2');\n\n//# sourceURL=webpack:///./src/2.js?");
-
-/***/ }),
-
-/***/ "./src/mode1.js":
-/*!**********************!*\
-  !*** ./src/mode1.js ***!
-  \**********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (12);\n\n//# sourceURL=webpack:///./src/mode1.js?");
+eval("throw new Error(\"Module build failed (from ./node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js):\\nError: Cannot find module '@babel/core'\\n babel-loader@8 requires Babel 7.x (the package '@babel/core'). If you'd like to use Babel 6.x ('babel-core'), you should install 'babel-loader@7'.\\n    at Function.Module._resolveFilename (module.js:547:15)\\n    at Function.Module._load (module.js:474:25)\\n    at Module.require (module.js:596:17)\\n    at require (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_v8-compile-cache@2.0.2@v8-compile-cache\\\\v8-compile-cache.js:159:20)\\n    at Object.<anonymous> (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_babel-loader@8.0.5@babel-loader\\\\lib\\\\index.js:10:11)\\n    at Module._compile (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_v8-compile-cache@2.0.2@v8-compile-cache\\\\v8-compile-cache.js:178:30)\\n    at Object.Module._extensions..js (module.js:663:10)\\n    at Module.load (module.js:565:32)\\n    at tryModuleLoad (module.js:505:12)\\n    at Function.Module._load (module.js:497:3)\\n    at Module.require (module.js:596:17)\\n    at require (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_v8-compile-cache@2.0.2@v8-compile-cache\\\\v8-compile-cache.js:159:20)\\n    at loadLoader (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_loader-runner@2.4.0@loader-runner\\\\lib\\\\loadLoader.js:18:17)\\n    at iteratePitchingLoaders (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_loader-runner@2.4.0@loader-runner\\\\lib\\\\LoaderRunner.js:169:2)\\n    at runLoaders (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_loader-runner@2.4.0@loader-runner\\\\lib\\\\LoaderRunner.js:365:2)\\n    at NormalModule.doBuild (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_webpack@4.29.6@webpack\\\\lib\\\\NormalModule.js:280:3)\\n    at NormalModule.build (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_webpack@4.29.6@webpack\\\\lib\\\\NormalModule.js:427:15)\\n    at Compilation.buildModule (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_webpack@4.29.6@webpack\\\\lib\\\\Compilation.js:635:10)\\n    at moduleFactory.create (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_webpack@4.29.6@webpack\\\\lib\\\\Compilation.js:1021:12)\\n    at factory (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_webpack@4.29.6@webpack\\\\lib\\\\NormalModuleFactory.js:405:6)\\n    at hooks.afterResolve.callAsync (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_webpack@4.29.6@webpack\\\\lib\\\\NormalModuleFactory.js:155:13)\\n    at AsyncSeriesWaterfallHook.eval [as callAsync] (eval at create (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_tapable@1.1.1@tapable\\\\lib\\\\HookCodeFactory.js:32:10), <anonymous>:6:1)\\n    at AsyncSeriesWaterfallHook.lazyCompileHook (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_tapable@1.1.1@tapable\\\\lib\\\\Hook.js:154:20)\\n    at resolver (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_webpack@4.29.6@webpack\\\\lib\\\\NormalModuleFactory.js:138:29)\\n    at process.nextTick (E:\\\\front\\\\webpack--1\\\\node_modules\\\\_webpack@4.29.6@webpack\\\\lib\\\\NormalModuleFactory.js:342:9)\\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\\n    at process._tickCallback (internal/process/next_tick.js:180:9)\");\n\n//# sourceURL=webpack:///./src/es6.js?");
 
 /***/ })
 
