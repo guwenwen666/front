@@ -31,5 +31,8 @@ chromium/blink（chrome内核）
 
 ### 排版标签
 * head  \<h1>\</h1>-- \<h6>\</h6>
-* 段落标签 \<p>\</p>
-  e.clientX,e.clientY e.pageX e.pageY e.offsetX e.offsetY
+* 段落标签 \<p>\</p>  
+* 水平标签 \<hr />  
+
+### 换行标签
+* \<br />
