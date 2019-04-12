@@ -1,41 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
-        <div>  
-            <div class="box"><span></span></div>
-            <div class="box"><span></span><span></span></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+        <div>
+            <div class="box">
+                <span></span>
+            </div>
+            <div class="box">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="box">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="box">
+                <div class="colume">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="colume">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="colume">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="colume">
+                    <span></span>
+                </div>
+                <div class="colume">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="colume">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="colume">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
             <div class="box"></div>
             <div class="box"></div>
             <div class="box"></div>
         </div>
     </div>
 </body>
+
 </html>
 <style>
-    html,body{
+    html,
+    body {
         width: 100%;
         height: 100%;
         background: palegoldenrod;
     }
-    .container{
+
+    .container {
         height: 100%;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .container>div{
+
+    .container>div {
         height: 660px;
         width: 660px;
         background: #fff;
@@ -43,17 +90,19 @@
         box-sizing: border-box;
         flex-wrap: wrap;
     }
-    .box{
+
+    .box {
         box-sizing: inherit;
         height: 200px;
         width: 200px;
-        border:2px solid #666666;
+        border: 2px solid #666666;
         background: pink;
         flex-shrink: 0;
         margin: 10px;
         border-radius: 5px;
     }
-    .box span{
+
+    .box span {
         display: block;
         height: 20px;
         width: 20px;
@@ -61,12 +110,65 @@
         background: #666666;
         padding: 10px;
     }
-    .container div:nth-child(2){
+
+    .container>div>div:nth-child(2) {
         display: flex;
-        justify-content:space-between;
+        justify-content: space-between;
     }
-    .container div:nth-child(2) span{
+
+    .container div:nth-child(2) span:nth-child(2) {
         display: flex;
         align-self: flex-end;
+    }
+
+    .container div:nth-child(3) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container div:nth-child(3) span:nth-child(2) {
+        display: flex;
+        align-self: center;
+    }
+
+    .container div:nth-child(3) span:nth-child(3) {
+        display: flex;
+        align-self: flex-end;
+    }
+
+    .container div:nth-child(4) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container>div>div:nth-child(4)>.colume {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .container div:nth-child(5) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container>div>div:nth-child(5)>.colume {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .container>div>div:nth-child(5)>.colume:nth-child(2) {
+        justify-content: center
+    }
+    .container div:nth-child(6) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container>div>div:nth-child(6)>.colume {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 </style>
