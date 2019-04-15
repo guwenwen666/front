@@ -27,3 +27,4 @@
 * input
 ![avatar](img/input新增.png)  
 * 表单新增属性
+![avatar](img/input属性.png)  
