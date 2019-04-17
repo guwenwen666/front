@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断是否为空</title>
+    <script src="utils/jquery.js"></script>
+</head>
+<script>
+    let a = NaN
+    if (!a) {// "",null,undefined,NaN
+        alert('hhh')
+    }
+    let b = null;
+    if (b === undefined) {
+        alert('hhh1')
+    }
+    let c = undefined;
+    if (c == null) {
+        alert('hhh2')
+    }
+    let d = null;
+    if (!$.trim(d)) {
+        alert('hhh3')
+    }
+    let e = []
+    if (e.length == 0) {
+        alert('数组为空')
+    }
+    if (!e.length) {
+        alert('数组为空2')
+    }
+    let f = {}
+    // Object {}
+    if ($.isEmptyObject(f)) { // 普通对象使用 for...in 判断，有 key 即为 false
+        alert("对象为空")
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>
