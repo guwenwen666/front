@@ -19,5 +19,8 @@ https://www.jianshu.com/p/4c9c29967dd6
 
 ES6
 http://www.pianshen.com/article/1988167520/
-
+slot
+https://blog.csdn.net/pansuyong/article/details/81352827
+session失效重新登录
+https://blog.csdn.net/z1941563559/article/details/78965798
 
