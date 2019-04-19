@@ -35,7 +35,7 @@ module.exports={
     }
 }
 ```
-### devServer
+### devServer 相当于webpack+服务器
 * 安装 cnpm install --save webpack-dev-server
 ```
     devServer:{
