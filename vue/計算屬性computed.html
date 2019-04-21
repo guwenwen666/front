@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>computed</title>
+</head>
+
+<body>
+    <div id="app">
+        {{prices}}
+        <button @click='doAdd()'>add</button>
+        {{fullName}}
+        {{now}}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                p1: {
+                    price: 100
+                },
+                p2: {
+                    price: 200
+                }
+            },
+            computed: {
+                prices: function () {
+                    return this.p1.price + this.p2.price
+                },
+                fullName:{
+                    get:function(){
+                        return '111';
+                    },
+                    set:function(){
+                        alert('hhh')
+                    }
+                },
+                now:function(){
+                    return Date.now();
+                }
+            },
+            methods: {
+                doAdd: function () {
+                    this.p1.price = 10000
+                },
+                nowM:function(){
+                    return Date.now();
+                }
+            },
+
+        })
+    </script>
+
+</body>
+
+</html>

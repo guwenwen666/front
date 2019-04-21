@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>內置指令</title>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        {{cloak}}
+        <ul>
+            <li v-for="(book,index) in books">{{index}}--{{book.name}}</li>
+        </ul>
+        <ul>
+            <template v-for="(book,index) in books">
+                <li>序號 {{index}}</li>
+                <li>姓名 {{book.name}}</li>
+            </template>
+        </ul>
+        <ul>
+            <li v-for="(item,key,index) in user">{{index}}--{{key}}--{{item}}</li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                cloak: 'guwenwen',
+                books: [
+                    { name: 'vue' },
+                    { name: 'js' }
+                ],
+                user:{
+                    name:'gww',
+                    age:'20'
+                }
+            },
+            computed: {
+
+            },
+            methods: {
+
+            },
+
+        })
+    </script>
+    <style>
+        body,
+        html {
+            width: 100%;
+            width: 100%;
+            background: pink
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+
+</body>
+
+</html>
