@@ -23,4 +23,6 @@ slot
 https://blog.csdn.net/pansuyong/article/details/81352827
 session失效重新登录
 https://blog.csdn.net/z1941563559/article/details/78965798
+跨域
+https://www.cnblogs.com/cap-rq/p/10149789.html
 
