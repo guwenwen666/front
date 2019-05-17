@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object类型</title>
+</head>
+<script>
+let o = new Object();
+o.toString = function(){
+    return '888'
+}
+console.log('对象为',o);
+o.name = 'gww'
+console.log('hasOwnProperty',o.hasOwnProperty('name'))
+console.log('isPrototypeOf',o.isPrototypeOf(Object))
+console.log('propertyIsEnumerable',o.propertyIsEnumerable('name'))
+console.log('toString',o.toString())
+</script>
+<body>
+    
+</body>
+</html>

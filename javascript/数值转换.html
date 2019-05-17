@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数值转换</title>
+    <script>
+    console.log(Number(true));//1
+    console.log(Number(null));//0
+    console.log(Number(undefined));//NaN
+    console.log(Number(1));//1
+    console.log(Number(00011));//9
+    console.log(Number('011'));//11
+    console.log(Number('123'));//123
+    console.log(Number('0xf'));//15
+    console.log(Number('111iiioooppp'))//NaN
+    let obj = {
+        a:1
+    };
+    console.log(Number(obj));//NaN
+    console.log('---------------------parseInt');
+    console.log(parseInt('1234blue'));//1234
+    console.log(parseInt(''));//NaN
+    console.log(parseInt('0xA'));//10
+    console.log(parseInt(22.5));//22
+    console.log(parseInt('070',8));//56(八进制数)
+    console.log(parseInt('70'));//70
+    console.log(parseInt('gww123'));//NaN
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
