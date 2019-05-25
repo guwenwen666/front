@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>with语句</title>
+    <script>
+        // var qs = location.pathname;
+        // var hostName = location.protocol;
+        // var url = location.href;;
+        //上面几行代码都包含location对象 可以简化为
+        with(location){
+         var qs = pathname;
+        var hostName = protocol;
+        var url = href;
+        console.log(qs);
+        console.log(hostName);
+        console.log(url);
+        }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

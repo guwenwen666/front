@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>break&continue</title>
+    <script>
+    var num = 0;
+    outermost:
+    for(var i = 0;i<10;i++){
+        for(var j=0;j<10;j++){
+            if(i==5&&j==5){
+                break outermost;//不加label 95 加上label 55
+            }
+            num++;
+        }
+    }
+    alert(num);
+    var num1 = 0;
+    outermost1:
+    for(var i = 0;i<10;i++){
+        for(var j=0;j<10;j++){
+            if(i==5&&j==5){
+                continue outermost1;//不加label 99 加上label 95
+            }
+            num1++;
+        }
+    }
+    alert(num1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
