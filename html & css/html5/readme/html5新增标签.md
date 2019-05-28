@@ -28,3 +28,10 @@
 ![avatar](img/input新增.png)  
 * 表单新增属性
 ![avatar](img/input属性.png)  
+ autocomplete:1.提交 2.name属性
+ ```
+ //点击用户名光标定位
+    <label>用户名：
+        <input type="text">
+    </label>
+ ```
