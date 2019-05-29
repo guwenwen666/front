@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>vue简介</title>
+</head>
+
+<body>
+    <div id="app">
+        {{num}}
+        <button v-on:click="num++">+</button>
+        {{num1}}
+        <button v-on:click="num1++">+</button>
+        <ol>
+            <!-- 创建一个 todo-item 组件的实例 -->
+            <todo-item todo="父组件"></todo-item>
+        </ol>
+    </div>
+</body>
+<script>
+    console.log(this);//vue作为一个windows下的对象 
+    // 定义名为 todo-item 的新组件
+    Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{todo}}</li>'
+    })
+    let data = {
+        num: 0,
+        num1: 1
+    }
+    //这里唯一的例外是使用 Object.freeze()，这会阻止修改现有的属性，也意味着响应系统无法再追踪变化。
+    //Object.freeze(data)
+    //当实例被创建时 data 中存在的属性才是响应式的
+    var vm = new Vue({
+        el: '#app',
+        data: data
+        // data() {
+        //     return {
+        //         num: '0',
+        //         num1:1
+        //     }
+        // },
+    })
+    vm.num1 = 10;
+    // $watch 是一个实例方法
+    vm.$watch('num', function (newValue, oldValue) {
+        // 这个回调将在 `vm.a` 改变后调用
+        alert('新'+newValue);
+        alert('旧'+oldValue)
+    })
+</script>
+
+</html>
