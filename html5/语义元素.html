@@ -15,10 +15,10 @@
 
             detail.ontoggle = function () {
                 console.log('this');
-                if(this.open){
+                if (this.open) {
                     info.style.border = '2px solid pink';
                     summary.style.outline = "none"
-                }else{
+                } else {
                     info.style.border = '1px solid #666'
                 }
             }
@@ -26,16 +26,22 @@
             var openbtn = document.getElementById('openbtn');
             var dialog = document.getElementById('dialog');
             var cls = document.getElementById('cls');
-            console.log("openbtn",openbtn.__proto__);
-            console.log("dialog",dialog.__proto__)
-            openbtn.onclick = function(){
+            console.log("openbtn", openbtn.__proto__);
+            console.log("dialog", dialog.__proto__)
+            openbtn.onclick = function () {
                 dialog.showModal();
             }
-            cls.onclick = function(){
+            cls.onclick = function () {
                 dialog.close();
             }
-            dialog.onclose=function(){
+            dialog.onclose = function () {
                 alert('被关闭')
+            }
+            //-------------------
+            var command = document.getElementById('command');
+            console.log('command',command.__proto__);
+            command.onclick = function(){
+                alert('hhh')
             }
         }
 
@@ -65,7 +71,9 @@
     </details>
     <article>
         <h1>静夜思</h1>
-        <p>床前明月<mark>光</mark></p>
+        <p>床前明月
+            <mark>光</mark>
+        </p>
     </article>
     <progress max="100" value="20"></progress>
     <meter value="3" min='0' max="10" high="2" optimum="8"></meter>
@@ -76,7 +84,7 @@
         <h2>用户登录</h2>
         <main>
             <form>
-                <label for="name" value= '用户名'>
+                <label for="name" value='用户名'>
                     <input id="name">
                 </label>
                 <label for="pwd" value="密码">
@@ -87,7 +95,49 @@
             <button id="cls">关闭</button>
         </main>
     </dialog>
+    <ul>
+        <li>
+            用户
+            <bdi>admin</bdi>:70分
+        </li>
+        <li>
+            用户
+            <bdi>admin</bdi>:70分
+        </li>
+        <li>
+            用户
+            <bdi>admin</bdi>:70分
+        </li>
+    </ul>
+    <bdo dir="rtl">Here is some text</bdo>
+    <bdo dir="ltr">Here is some text</bdo>
 
+    <p>本站地址为，<wbr>111111111111111111111111111111111111111111111111111111111111111111111</p>
+    <ruby>
+        少<rt>shao</rt>小<rt>xiao</rt>离<rt>li</rt>家<rt>jia</rt>老<rt>lao</rt>大回
+    </ruby>
+    <menu>
+        <command id="command">命令</command>
+    </menu>
+    <command id="command1">命令</command>
+    <a href="img/1.jpg" download="img/1.jpg"><img src="img/1.jpg"></a>
+    <ol reversed>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+    <dl>
+        <dt><dfn>床前明月光</dfn></dt>
+        <dd>诗的前两句.......</dd>
+        <dd>.......</dd>
+        <dt>举头望明月</dt>
+        <dd>诗的后两句...</dd>
+    </dl>
+    <p>
+        <a href="http://wwww.baidu.com"><cite>宋词</cite></a>
+    </p>
+    
 </body>
 
 </html>
