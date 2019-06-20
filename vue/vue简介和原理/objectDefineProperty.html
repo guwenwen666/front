@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mvvm</title>
+    <script>
+        let obj = {};
+        let song = '发如雪';
+        obj.singer = '周杰伦';
+        Object.defineProperty(obj, 'music', {
+           // value: '七里香',
+          //  writable: true, // 可以修改对象
+            configurable: true,//可以配置对象 删除属性
+            enumerable: true,//可以枚举
+            //get和set设置时不能设置value和writable。他们代替了二者且是互斥的
+               get(){//获取obj.music的时候就会调用get方法
+               console.log('调用了get方法')
+                return song;
+               },
+               set(val){//将修改的值重新赋值给song
+               console.log('调用了set方法')
+                song = val;
+               }
+        })
+          console.log(obj.music);
+        // delete obj.music;//如果想对obj里的属性进行删除，configurable设置成true
+        // console.log(obj);
+        // obj.music = '听妈妈的话';//如果要对obj的属性进行修改，writable设置为true
+        // console.log(obj);
+        for (let key in obj) {
+            //默认不能进行枚举 
+            //需要设置enumerable为true 不然拿不到music，只能拿到singer
+            console.log('obj的key为', key);
+        }
+        obj.music = '夜曲';
+        console.log(obj.music)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
