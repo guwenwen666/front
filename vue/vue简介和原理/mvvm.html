@@ -11,5 +11,19 @@
         <h1>{{song}}</h1>
         <p>{{album.name}}是{{singer}}2005年11月发行的专辑</p>
     </div>
+    <script src="js/mvvm.js"></script>
+    <script>
+    let mvvm = new Mvvm({
+        el:'#app',
+        data:{
+            song:'发如雪',
+            album:{
+                name:'十一月的肖邦',
+            },
+            singer:'周杰伦'
+        }
+    })
+    console.log(mvvm.song)
+    </script>
 </body>
 </html>
