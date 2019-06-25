@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>class</title>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <span :class="{activeColor:isActive,activeSize:isActive}">{{name}}</span>
+        <span :class="ClassObject">{{name}}</span>
+        <span :class="[activeC,activeS]">{{name}}</span>
+        <span :class="isActive?activeS:activeC">{{name}}</span>
+        <span :class="[{activeColor:isActive},activeS]">{{name}}</span>
+        <my-component :class="{activeColor:isActive,activeSize:isActive}"></my-component>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('my-component', {
+            template: '<p>Hi</p>'
+        });
+        new Vue({
+            el: "#app",
+            data: {
+                name:'顾大霸',
+                isActive: true,
+                activeC:'activeColor',
+                activeS:'activeSize'
+            },
+            computed:{
+                ClassObject(){
+                    return {
+                        activeColor:this.isActive
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+<style lang="scss">
+    [v-cloak]{
+        display: none;
+    }
+    .activeColor{
+        color: red
+    }
+    .activeSize{
+        font-size: 20px
+    }
+</style>
+
+</html>

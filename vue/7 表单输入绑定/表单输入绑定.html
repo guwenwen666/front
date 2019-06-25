@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单输入绑定</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--文本-->
+        <input v-model.trim="message">
+        <p>Message is {{message}}</p>
+        <!--多行文本-->
+        <textarea v-model="areaMessage"></textarea>
+        <p>Message is {{areaMessage}}</p>
+        <!--单个复选框 绑定布尔值-->
+        <input type="checkbox" v-model="singleCheck" id="singleCheck">
+        <label for="singleCheck">单个复选框</label>
+        <p>checked:{{singleCheck}}</p>
+        <!--多个复选框，绑定到同一个数组-->
+        <input type="checkbox" id="jack" value="jack" v-model="checkedNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="jog" value="jog1" v-model="checkedNames">
+        <label for="jog">jog</label>
+        <p>Checked names: {{ checkedNames }}</p>
+        <!--单选按钮-->
+        <input type="radio" v-model="picked" id="one" value="one" >
+        <label for="one">one</label>
+        <input type="radio" v-model="picked" id="two" value="two">
+        <label for="two">two</label>
+        <p>radio:{{picked}}</p>
+        <!--选择框 单选-->
+        <select v-model="selected">
+            <option value="a">A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <p>select：{{selected}}</p>
+        <!--选择框多选 绑定一个数组-->
+        <select v-model="selecteds" multiple>
+            <option value="a">A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <p>selects:{{selecteds}}</p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message: '',//文本框值
+            areaMessage: '',//多行文本值
+            singleCheck: false,//单个复选框值
+            checkedNames: [],//多个复选框值
+            picked: 'one',//单选按钮
+            selected: '',//选择框 单选
+            selecteds: []//选择框 多选
+        }
+    })
+</script>
+
+</html>

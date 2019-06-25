@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象更新检测</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,pro) in items" :key="item">
+               {{pro}}-- {{item}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            items: {
+                a: 1
+            }
+        },
+        mounted() {
+            this.$set(this.items,'name','gww');
+            this.items = Object.assign({},this.items,{
+                age:20,
+                fav:'hhh'
+            })
+        },
+
+    })
+    //Vue.set(vm.items, 'age', 27)
+</script>
+
+</html>

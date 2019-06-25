@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>class</title>
+</head>
+
+<body>
+    <div id="app">
+        <span :style="styleObj">{{name}}</span>
+        <span :style="[styleObj,styleObj2]">{{name}}</span>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name: '顾大霸',
+                styleObj:{
+                    color:'red',
+                    fontSize:'20px'
+                },
+                styleObj2:{
+                    color:'yellow',
+                    fontSize:'22px',
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

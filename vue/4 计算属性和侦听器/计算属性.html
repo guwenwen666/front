@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>computed</title>
+</head>
+
+<body>
+    <div id="app">
+        {{prices}}
+        <button @click='doAdd()'>add</button>
+        {{fullName}}
+        <br> {{now}}
+        <br>{{nowM()}}
+        <p>
+            ask a question:
+            <input v-model="question">
+        </p>
+        <p>{{answer}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script>
+        new Vue({
+            el: '#app',
+            data: {
+                question: '',
+                answer: 'I cannot give you an answer until you ask a question!',
+                p1: {
+                    price: 100
+                },
+                p2: {
+                    price: 200
+                },
+                name: '顾大霸',
+                type: ''
+            },
+            computed: {
+                prices: function () {
+                    return this.p1.price + this.p2.price
+                },
+                fullName: {
+                    get: function () {
+                        return this.name + this.type
+                    },
+                    set: function (newVal) {
+                        this.name = newVal + 'hhh'
+                        this.type = '666'
+                    }
+                },
+                now: function () {
+                    // 下面的计算属性将不再更新，因为 Date.now() 不是响应式依赖：
+                    return Date.now();
+                }
+            },
+            watch: {
+                //question发生改变这个函数执行
+                question: function (newVal, oldVal) {
+                    this.answer = 'Waiting for you to stop typing...'
+                    this.debouncedGetAnswer()
+                }
+            },
+            methods: {
+                doAdd: function () {
+                    this.p1.price = 10000;
+                    this.fullName = '顾小怼'
+                },
+                nowM: function () {
+                    return Date.now();
+                },
+                getAnswer: function () {
+                    this.answer = 'thinking'
+                    axios.get('https://yesno.wtf/api').then(res => {
+                        this.answer = _.capitalize(response.data.answer)
+                    }).catch(function (error) {
+                        this.answer = 'Error! Could not reach the API. ' + error
+                    })
+                }
+            },
+            created: function () {
+                // `_.debounce` 是一个通过 Lodash 限制操作频率的函数。
+                // 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率
+                // AJAX 请求直到用户输入完毕才会发出。想要了解更多关于
+                // `_.debounce` 函数 (及其近亲 `_.throttle`) 的知识，
+                // 请参考：https://lodash.com/docs#debounce
+                this.debouncedGetAnswer = _.debounce(this.getAnswer, 1000)
+            },
+
+        })
+    </script>
+
+</body>
+
+</html>
