@@ -41,6 +41,7 @@
             },
             computed: {
                 prices: function () {
+                    this.p1.price = 999;
                     return this.p1.price + this.p2.price
                 },
                 fullName: {

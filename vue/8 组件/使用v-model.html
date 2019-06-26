@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在组件中使用v-model</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="searchText"> {{searchText}}
+        <input :value="searchText1" @input="doInput($event)"> {{searchText1}}
+        <br> {{searchText2}}
+        <blog-post-1 :search-text2="searchText2" @input="doGetCom"></blog-post-1>
+    </div>
+</body>
+<script>
+    Vue.component('blog-post-1', {
+        props: ['search-text2'],
+        template:"<div><input :value='searchText2' @input='doInput($event)'/></div>",
+        data: function () {
+            return {
+
+            }
+        },
+        methods:{
+            doInput(event){
+                this.$emit('input',event.target.value)
+            }
+        }
+    })
+    new Vue({
+        el: '#app',
+        data: {
+            searchText: '请输入',
+            searchText1: '请输入1',
+            searchText2: '子组件使用'
+        },
+        methods: {
+            doInput(event) {
+                //  console.log(event);
+                this.searchText1 = event.target.value
+            },
+            doGetCom(value){
+                console.log(value)
+                this.searchText2 = value
+            }
+        },
+    })
+</script>
+
+</html>
